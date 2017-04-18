@@ -1,0 +1,37 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../paper-tooltip/paper-tooltip.html">
+
+<!--
+`tooltip-fail`
+Showing a neon-animation error via tooltips
+
+@demo demo/index.html
+-->
+
+<dom-module id="tooltip-fail">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <h2 id="tip">Hello [[prop1]]</h2>
+		<paper-tooltip for="tip">This is a tooltip</paper-tooltip>
+  </template>
+
+  <script>
+    class MyElement extends Polymer.Element {
+      static get is() { return 'tooltip-fail'; }
+      static get properties() {
+        return {
+          prop1: {
+            type: String,
+            value: 'tooltip-fail'
+          }
+        };
+      }
+    }
+
+    window.customElements.define(MyElement.is, MyElement);
+  </script>
+</dom-module>
